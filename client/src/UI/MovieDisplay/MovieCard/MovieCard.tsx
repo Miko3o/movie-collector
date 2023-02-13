@@ -1,6 +1,6 @@
 import './MovieCard.css';
 
-type Movie = {
+export type Movie = {
   Year: string;
   Poster: string;
   Title: string;
@@ -11,7 +11,7 @@ type MoiveCardProps = {
   movie: Movie
 }
 
-const MovieCard = (props: MoiveCardProps) => {
+export const MovieCard = (props: MoiveCardProps) => {
   const {movie} = props
   return (
       <div className="movie" data-testid="movieCardTest">
@@ -29,4 +29,3 @@ const MovieCard = (props: MoiveCardProps) => {
   );
 }
 
-export default MovieCard;

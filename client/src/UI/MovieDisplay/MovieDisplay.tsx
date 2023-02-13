@@ -1,9 +1,9 @@
-import MovieCard from "../../Components/MovieCard/MovieCard";
+import {MovieCard, Movie} from "./MovieCard/MovieCard";
 import './MovieDisplay.css';
 
 
 type MoviesProps = {
-    movies: Array<any>
+    movies: Array<Movie>
 }
 
 const MovieDisplay = (props: MoviesProps) => {
