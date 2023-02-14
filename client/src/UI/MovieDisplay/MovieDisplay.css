@@ -1,5 +1,9 @@
-.container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap
-  }
+.ui-moviedisplay-wrapper {
+  border: 10px solid black;
+  max-width: 900px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap
+}

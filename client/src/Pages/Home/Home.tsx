@@ -34,10 +34,10 @@ function Home() {
 
   return (
     <>
-    <div className="app" data-testid="appTest">
-      <div className="title">
+    <div className="page-home-wrapper" data-testid="appTest">
+      <h1 className="title">
         {titleLabel}
-      </div>
+      </h1>
       <button onClick={handleOnClick}>
         Login
       </button>
