@@ -11,7 +11,7 @@ const MovieDisplay = (props: MoviesProps) => {
 
     return (movies?.length > 0
     ? (
-      <div className="container">
+      <div className="ui-moviedisplay-wrapper">
         {movies.map((movie) => {
           return <MovieCard movie={movie}/>
       })}

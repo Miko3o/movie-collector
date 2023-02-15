@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useNavigate, redirect } from "react-router-dom";
 
 import './Home.css';
+import { Header }  from '../../UI/Header/Header'
 import SearchBar from '../../UI/SearchBar/SearchBar';
 import MovieDisplay from '../../UI/MovieDisplay/MovieDisplay';
 
@@ -22,7 +23,6 @@ function Home() {
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    console.log("hi")
     navigate("/Login")
   }
 
@@ -34,10 +34,13 @@ function Home() {
 
   return (
     <>
+    <header>
+      <Header />
+    </header>
     <div className="page-home-wrapper" data-testid="appTest">
-      <h1 className="title">
+      <h2 className="title">
         {titleLabel}
-      </h1>
+      </h2>
       <button onClick={handleOnClick}>
         Login
       </button>

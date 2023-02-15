@@ -14,7 +14,7 @@ type MoiveCardProps = {
 export const MovieCard = (props: MoiveCardProps) => {
   const {movie} = props
   return (
-      <div className="movie" data-testid="movieCardTest">
+      <div className="ui-movieDisplay-movieCard-wrapper" data-testid="movieCardTest">
         <div>
           <p>{movie.Year}</p>
         </div>

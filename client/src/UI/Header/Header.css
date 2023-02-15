@@ -1,0 +1,49 @@
+@font-face{
+    font-family: movieFont;
+    src: url(showtime.ttf)
+}
+
+.ui-header-wrapper {
+    background-color: rgb(155, 61, 61);
+    padding: 20px;
+    margin-top: 40px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.ui-header-siteTitle {
+    font-size: 70px;
+    background-color: rgb(195, 195, 121);
+    font-family: movieFont;
+    padding: 10px;
+    margin: 10px;
+    max-width: 540px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.ui-header-options-wrapper {
+    list-style: none;
+    height: 60px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#ui-header-option {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    color:rgb(242, 242, 129);
+    text-shadow: 3px 3px black;
+    font-weight: 700;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#ui-header-option:hover {
+    color: rgb(252, 255, 229);
+    cursor: pointer;
+}

@@ -1,0 +1,8 @@
+.ui-movieDisplay-movieCard-wrapper {
+    border: 2px solid black;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 600px;
+    max-height: 600px;
+    margin: 20px;
+}

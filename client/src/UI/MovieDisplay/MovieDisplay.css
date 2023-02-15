@@ -1,6 +1,4 @@
 .ui-moviedisplay-wrapper {
-  border: 10px solid black;
-  max-width: 900px;
   margin: auto;
 
   display: flex;
