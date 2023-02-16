@@ -6,3 +6,9 @@
     max-height: 600px;
     margin: 20px;
 }
+
+.ui-movieDisplay-movieCard-wrapper:hover {
+    z-index: 2;
+    cursor: pointer;
+    background-color: rgba(90, 202, 230, 0.329);
+}

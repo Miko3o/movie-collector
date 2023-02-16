@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import { useNavigate, redirect } from "react-router-dom";
-
-import './Home.css';
+//components
 import { Header }  from '../../UI/Header/Header'
 import SearchBar from '../../UI/SearchBar/SearchBar';
 import MovieDisplay from '../../UI/MovieDisplay/MovieDisplay';
+//css
+import './Home.css';
 
 const API_URL = `${process.env.REACT_APP_API_URL}${process.env.REACT_APP_API_KEY}`;
 
 
 
-function Home() {
-  console.log(process.env.REACT_APP_API_KEY)
+export const Home = () => {
   const [movies, setMovies] = useState([]);
   const searchMovies = async (title: string) => {
     const response = await fetch(`${API_URL}&s=${title}`);
@@ -19,6 +19,7 @@ function Home() {
 
     setMovies(data.Search)
   }
+
 
   const navigate = useNavigate();
 
@@ -57,4 +58,3 @@ function Home() {
   )
 }
 
-export default Home

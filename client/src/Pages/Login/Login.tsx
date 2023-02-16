@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { useNavigate, redirect } from "react-router-dom";
-
-import './Login.css'
+//components
 import { Header }  from '../../UI/Header/Header'
+//css
+import './Login.css'
 
-
-function Login() {
+export const Login = () => {
 
     const [usernameInput, setUsernameInput] = useState('')
     const [passwordInput, setPasswordInput] = useState('')
@@ -31,6 +31,7 @@ function Login() {
                 <input
                     id="page-login-input"
                     placeholder='Password'
+                    type="password"
                     value={passwordInput}
                     onChange = {(e: React.ChangeEvent<HTMLInputElement>) => {setPasswordInput(e.target.value)}}
                 />
@@ -49,4 +50,3 @@ function Login() {
     )
 }
 
-export default Login;

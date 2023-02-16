@@ -5,7 +5,7 @@ import './CreateAccount.css'
 import { Header }  from '../../UI/Header/Header'
 
 
-function CreateAccount() {
+export const  CreateAccount = () => {
 
     const [usernameInput, setUsernameInput] = useState('')
     const [passwordInput, setPasswordInput] = useState('')
@@ -32,12 +32,14 @@ function CreateAccount() {
                 <input
                     id="page-createAccount-input"
                     placeholder='New Password'
+                    type="password"
                     value={passwordInput}
                     onChange = {(e: React.ChangeEvent<HTMLInputElement>) => {setPasswordInput(e.target.value)}}
                 />
                 <input
                     id="page-createAccount-input"
                     placeholder='Confirm Password'
+                    type="password"
                     value={confirmPasswordInput}
                     onChange = {(e: React.ChangeEvent<HTMLInputElement>) => {setConfirmPasswordInput(e.target.value)}}
                 />
@@ -56,4 +58,3 @@ function CreateAccount() {
     )
 }
 
-export default CreateAccount;

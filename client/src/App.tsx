@@ -1,11 +1,12 @@
-import React, {useState, useEffect} from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+//pages
+import { Login } from './Pages/Login/Login';
+import { Home } from './Pages/Home/Home';
+import { CreateAccount } from './Pages/CreateAccount/CreateAccount';
+import { MovieInfo } from './Pages/MovieInfo/MovieInfo';
+//css
+import './App.css';
 
-import Login from './Pages/Login/Login';
-import Home from './Pages/Home/Home';
-
-import './App.css'
-import CreateAccount from './Pages/CreateAccount/CreateAccount';
 
 
 
@@ -21,6 +22,9 @@ export default function App() {
         </Routes>
         <Routes>
           <Route path="/CreateAccount"element={<CreateAccount />}/>
+        </Routes>
+        <Routes>
+          <Route path="/MovieInfo"element={<MovieInfo />}/>
         </Routes>
       </BrowserRouter>
     </div>
