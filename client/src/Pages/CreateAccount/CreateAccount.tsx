@@ -44,7 +44,26 @@ export const  CreateAccount = () => {
                     onChange = {(e: React.ChangeEvent<HTMLInputElement>) => {setConfirmPasswordInput(e.target.value)}}
                 />
                 <button 
-                    id="page-createAccount-button">
+                    id="page-createAccount-button"
+                    onClick={(e) => {
+                        if (passwordInput === confirmPasswordInput) {
+                            e.preventDefault();
+                            const newUserInfo = { usernameInput, passwordInput }
+                            console.log(usernameInput, passwordInput, confirmPasswordInput)
+                            const postCreateAccount = async () => {
+                                await fetch("http://localhost:5000/create_account", {
+                                    method: 'POST',
+                                    headers: { "Content-Type": "application/json"},
+                                    body: JSON.stringify(newUserInfo)
+                                }).then(() => {
+                                    console.log('new user added')
+                                })
+                            }
+                            postCreateAccount()
+                        } else {
+                            console.log("passwords don't match")
+                        }}
+                    }>
                     Create Account
                 </button>
                 <button 

@@ -2,7 +2,7 @@
   "name": "movie-collector",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5000/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -40,8 +40,8 @@
   "devDependencies": {
     "@types/jest": "^29.4.0",
     "@types/node": "^18.13.0",
-    "@types/react": "^18.0.27",
-    "@types/react-dom": "^18.0.10",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
     "@types/websocket": "^1.0.5",
     "dotenv": "^16.0.3",
     "typescript": "^4.9.5"

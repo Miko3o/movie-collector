@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 //pages
 import { Login } from './Pages/Login/Login';
@@ -6,11 +7,15 @@ import { CreateAccount } from './Pages/CreateAccount/CreateAccount';
 import { MovieInfo } from './Pages/MovieInfo/MovieInfo';
 //css
 import './App.css';
+import { getMembers } from './Services/members/get';
 
 
 
 
 export default function App() {
+  useEffect(() => {
+    getMembers()
+  }, [])
   return (
     <div className="app-wrapper" >
       <BrowserRouter>

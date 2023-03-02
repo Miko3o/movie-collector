@@ -27,6 +27,8 @@ export const Home = () => {
     navigate("/Login")
   }
 
+
+
   const name = "Miko"
   const isNamed = true
   //const actualName = isNamed ? name : "guy"

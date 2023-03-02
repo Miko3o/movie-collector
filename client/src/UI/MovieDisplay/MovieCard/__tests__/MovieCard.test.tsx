@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen, cleanup } from '@testing-library/react'
-import MovieCard from "../MovieCard";
+import { MovieCard } from "../MovieCard";
 
 test('should render MovieCard component', () => {
     //setup
@@ -9,6 +9,7 @@ test('should render MovieCard component', () => {
             Poster: 'someone',
             Title: 'test',
             Type: 'movie',
+            imdbID: '123'
     }
     
     render(<MovieCard movie={ movie }/>);
