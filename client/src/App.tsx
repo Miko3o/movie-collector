@@ -17,7 +17,9 @@ export default function App() {
     getMembers()
   }, [])
   return (
-    <div className="app-wrapper" >
+    <div
+      className="app-wrapper"
+      data-testid="appTest">
       <BrowserRouter>
         <Routes>
           <Route path="/"element={<Home />}/>
