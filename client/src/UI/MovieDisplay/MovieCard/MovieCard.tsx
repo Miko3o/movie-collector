@@ -1,4 +1,4 @@
-import { useNavigate, redirect } from "react-router-dom";
+import { useNavigate, redirect, NavigateFunction } from "react-router-dom";
 //css
 import './MovieCard.css';
 
@@ -10,13 +10,28 @@ export type Movie = {
   imdbID: string;
 }
 
-type MoiveCardProps = {
-  movie: Movie
+type MovieCardProps = {
+  movie: Movie,
+  navigate: NavigateFunction
 }
 
-export const MovieCard = (props: MoiveCardProps) => {
+type MovieCardContainerProps = {
+  movie: MovieCardProps['movie']
+}
+
+export const MovieCardContainer = (props: MovieCardContainerProps) => {
   const {movie} = props
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  return (
+  <MovieCard
+    movie = {movie}
+    navigate = {navigate}
+  />
+  )
+}
+
+export const MovieCard = (props: MovieCardProps) => {
+  const {movie, navigate} = props
   return (
     <div
       className="ui-movieDisplay-movieCard-wrapper"

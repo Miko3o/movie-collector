@@ -11,8 +11,14 @@ test('should render MovieCard component', () => {
             Type: 'movie',
             imdbID: '123'
     }
+
+    const navigate = jest.fn()
     
-    render(<MovieCard movie={ movie }/>);
+    render(<MovieCard
+        movie = { movie }
+        navigate = { navigate }
+    />);
+
     const movieCardElement = screen.getByTestId('movieCardTest');
     expect(movieCardElement).toBeInTheDocument();
 })

@@ -1,4 +1,4 @@
-import {MovieCard, Movie} from "./MovieCard/MovieCard";
+import {MovieCard, Movie, MovieCardContainer} from "./MovieCard/MovieCard";
 import './MovieDisplay.css';
 
 
@@ -13,7 +13,7 @@ const MovieDisplay = (props: MoviesProps) => {
     ? (
       <div className="ui-moviedisplay-wrapper">
         {movies.map((movie) => {
-          return <MovieCard movie={movie}/>
+          return <MovieCardContainer movie={movie}/>
       })}
       </div>
     ): (

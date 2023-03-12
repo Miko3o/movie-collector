@@ -10,12 +10,17 @@ import './App.css';
 import { getMembers } from './Services/members/get';
 
 
-
-
-export default function App() {
+export const AppContainer = () => {
   useEffect(() => {
     getMembers()
   }, [])
+  return (<App
+    
+  />)
+}
+
+export default function App() {
+
   return (
     <div
       className="app-wrapper"
