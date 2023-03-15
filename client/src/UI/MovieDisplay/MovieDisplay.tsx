@@ -6,7 +6,7 @@ type MoviesProps = {
     movies: Array<Movie>
 }
 
-const MovieDisplay = (props: MoviesProps) => {
+export const MovieDisplay = (props: MoviesProps) => {
     const {movies} = props
 
     return (movies?.length > 0
@@ -22,5 +22,3 @@ const MovieDisplay = (props: MoviesProps) => {
       </div>
     ))
 }
-
-export default MovieDisplay;
