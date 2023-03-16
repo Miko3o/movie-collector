@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from '@testing-library/react'
 import { MovieDisplay } from "../MovieDisplay"
 
-test('should render MovieDisplay component', () => {
+test('should render MovieDisplay component when movie array is not empty', () => {
     //setup
     const movie = {
             Year: "2000",
@@ -13,11 +13,13 @@ test('should render MovieDisplay component', () => {
 
     const movies = [movie, movie]
 
+    jest.mock("../MovieCard/MovieCard", () => ({ MovieCardContainer: () => "mocked MovieCardContainer" }));
+
     
     render(<MovieDisplay
         movies = { movies }
     />);
 
-    const movieCardElement = screen.getByTestId('movieDisplayTest');
+    const movieCardElement = screen.getByTestId('movieDisplayWrapperTest');
     expect(movieCardElement).toBeInTheDocument();
 })

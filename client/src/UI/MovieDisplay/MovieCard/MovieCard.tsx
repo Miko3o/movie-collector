@@ -23,10 +23,10 @@ export const MovieCardContainer = (props: MovieCardContainerProps) => {
   const {movie} = props
   const navigate = useNavigate()
   return (
-  <MovieCard
-    movie = {movie}
-    navigate = {navigate}
-  />
+    <MovieCard
+      movie = {movie}
+      navigate = {navigate}
+    />
   )
 }
 

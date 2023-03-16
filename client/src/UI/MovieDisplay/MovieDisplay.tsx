@@ -11,7 +11,10 @@ export const MovieDisplay = (props: MoviesProps) => {
 
     return (movies?.length > 0
     ? (
-      <div className="ui-moviedisplay-wrapper">
+      <div
+        className="ui-moviedisplay-wrapper"
+        data-testid="movieDisplayWrapperTest"
+      >
         {movies.map((movie) => {
           return <MovieCardContainer movie={movie}/>
       })}
@@ -19,7 +22,7 @@ export const MovieDisplay = (props: MoviesProps) => {
     ): (
       <div
         className="empty"
-        data-testid="movieDisplayTest"
+        data-testid="movieDisplayEmptyTest"
       >
         <h2>No Movies Found</h2>
       </div>
