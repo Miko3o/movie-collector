@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 test('renders app', () => {
-  const navigate = jest.fn()
+
 
   render(<App
   

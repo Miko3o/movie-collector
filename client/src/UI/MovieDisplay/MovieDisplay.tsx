@@ -17,7 +17,10 @@ export const MovieDisplay = (props: MoviesProps) => {
       })}
       </div>
     ): (
-      <div className="empty">
+      <div
+        className="empty"
+        data-testid="movieDisplayTest"
+      >
         <h2>No Movies Found</h2>
       </div>
     ))

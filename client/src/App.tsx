@@ -10,16 +10,13 @@ import './App.css';
 import { getMembers } from './Services/members/get';
 
 
-type AppContainerProps = {
-  effect: 
-}
 
 export const AppContainer = () => {
-  const effect = useEffect(() => {
+  useEffect(() => {
     getMembers()
   }, [])
   return (<App
-    effect = {effect}
+
   />)
 }
 
