@@ -36,7 +36,22 @@ export const Login = () => {
                     onChange = {(e: React.ChangeEvent<HTMLInputElement>) => {setPasswordInput(e.target.value)}}
                 />
                 <button 
-                    id="page-login-button">
+                    id="page-login-button"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        const loginInfo = { usernameInput, passwordInput }
+                        console.log(usernameInput, passwordInput)
+                        const getLogin = async () => {
+                            await fetch("http://localhost:5000/login", {
+                                method: 'GET',
+                                headers: { "Content-Type": "application/json"},
+                                body: JSON.stringify(loginInfo)
+                            }).then(() => {
+                                console.log('logged in')
+                            })
+                        }
+                        getLogin()}
+                    }>
                     Login
                 </button>
                 <button 

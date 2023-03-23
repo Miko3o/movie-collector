@@ -3,7 +3,7 @@ import { useNavigate, redirect } from "react-router-dom";
 //components
 import { Header }  from '../../UI/Header/Header'
 import SearchBar from '../../UI/SearchBar/SearchBar';
-import MovieDisplay from '../../UI/MovieDisplay/MovieDisplay';
+import { MovieDisplay } from '../../UI/MovieDisplay/MovieDisplay';
 //css
 import './Home.css';
 

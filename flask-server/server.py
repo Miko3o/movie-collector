@@ -31,6 +31,22 @@ def CreateAccount():
         return '200'
     return 'hi'
 
+@app.route('/login', methods=['GET', 'POST'])
+def Login():
+    if request.method == 'POST':
+        #Fetch form data
+        userDetails = request.json
+        print("userDetails:", str(userDetails))
+        userName = userDetails['usernameInput']
+        userPasswordToHash = userDetails['passwordInput']
+        userPassword = HandlePasswordHashing(userPasswordToHash)
+        cur = mysql.connection.cursor()
+        cur.execute('INSERT INTO userlogindata(userName, userPassword) VALUES(%s, %s)', (userName, userPassword))
+        mysql.connection.commit()
+        cur.close()
+        return '200'
+    return 'hi'
+
 def HandlePasswordHashing(passwordToHash):
     hashPassword = hashlib.md5(passwordToHash.encode())
     md5Hash = hashPassword.hexdigest
