@@ -43,11 +43,12 @@ export const Login = () => {
                         console.log(usernameInput, passwordInput)
                         const getLogin = async () => {
                             await fetch("http://localhost:5000/login", {
-                                method: 'GET',
-                                headers: { "Content-Type": "application/json"},
-                                body: JSON.stringify(loginInfo)
-                            }).then(() => {
+                                method: 'POST',
+                                headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "http://localhost:3000/"},
+                                body: JSON.stringify(loginInfo),
+                            }).then((response) => {
                                 console.log('logged in')
+                                console.log(response)
                             })
                         }
                         getLogin()}

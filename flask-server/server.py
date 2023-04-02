@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, jsonify, render_template, request
 from flask_mysqldb import MySQL
 import yaml
 import hashlib
@@ -31,34 +31,29 @@ def CreateAccount():
         return '200'
     return 'hi'
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=['POST'])
 def Login():
-    if request.method == 'GET':
+    if request.method == 'POST':
         #Fetch form data
-        userDetails = request.json
-        print("userDetails:", str(userDetails))
+        print("hi")
+        userDetails = request.get_json()
+        print("userDetails:", userDetails)
         userName = userDetails['usernameInput']
         userPasswordToHash = userDetails['passwordInput']
         userPassword = HandlePasswordHashing(userPasswordToHash)
+        userAuthenticationInfo = (userName, userPassword)
         cur = mysql.connection.cursor()
-        cur.execute('SELECT * FROM userlogindata WHERE userName = %s AND userPassword = %s', (userName, userPassword,))
+        querey = 'SELECT * FROM userlogindata WHERE userName = %s AND userPassword = %s'
+        cur.execute(querey, userAuthenticationInfo)
         mysql.connection.commit()
+        account = cur.fetchall()
         cur.close()
-        account = cur.fetchone()
-        if account:
-            session['loggedin'] = True
-            session['id'] = account['id']
-            session['username'] = account['username']
-            return 'Logged in successfully!'
-        else:
-            # Account doesnt exist or username/password incorrect
-            msg = 'Incorrect username/password!'
-    # Show the login form with message (if any)
-    return render_template('index.html', msg=msg)
+        print("account:", account)
+        return jsonify({"Message": "Return statement reached"}), 400
 
 def HandlePasswordHashing(passwordToHash):
     hashPassword = hashlib.md5(passwordToHash.encode())
-    md5Hash = hashPassword.hexdigest
+    md5Hash = hashPassword.hexdigest()
     return md5Hash
     
         
